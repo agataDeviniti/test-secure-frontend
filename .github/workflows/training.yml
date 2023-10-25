@@ -6,7 +6,7 @@ on:
       - bury08
 
 jobs:
-  run_tests:
+  first_step:
     runs-on: ubuntu-latest
     steps:
       - name: Git clone
@@ -15,6 +15,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Run unit tests
+      - name: Run install
         run:
           npm install
