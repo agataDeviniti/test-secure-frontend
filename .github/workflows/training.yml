@@ -1,20 +1,16 @@
 name: task 3
 
-on:
-  push:
-    branches:
-      - bury08
+on: push
 
 jobs:
-  first_step:
+  run_cypress_tests:
     runs-on: ubuntu-latest
     steps:
       - name: Git clone
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Setup Node.js 16
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Run install
-        run:
-          npm install
+      - name: Install
+        run: npm install
